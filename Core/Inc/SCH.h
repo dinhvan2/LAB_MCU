@@ -2,7 +2,7 @@
  * SCH.h
  *
  *  Created on: Nov 14, 2022
- *      Author: ADMIN
+ *      Author: Phạm Đình Văn
  */
 
 #ifndef INC_SCH_H_
