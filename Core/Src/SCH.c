@@ -2,7 +2,7 @@
  * SCH.c
  *
  *  Created on: Nov 14, 2022
- *      Author: ADMIN
+ *      Author: Phạm Đình Văn
  */
 #include "SCH.h"
 #define SCH_MAX_TASKS	40
