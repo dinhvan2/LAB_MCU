@@ -29,18 +29,6 @@ void SCH_Init(void){
 	}
 }
 void SCH_Add_Task ( void (*pFunction)() , uint32_t DELAY, uint32_t PERIOD,uint32_t ONESHOT){
-//	int i = 0;
-//	while((i < SCH_MAX_TASKS) && (SCH_tasks_G[i].pTask != 0)){
-//		i++;
-//	}
-//	if(i == SCH_MAX_TASKS){
-//		return;
-//	}
-//	SCH_tasks_G[i].pTask = pFunction;
-//	SCH_tasks_G[i].Delay = DELAY/TICK;
-//	SCH_tasks_G[i].Period =  PERIOD/TICK;
-//	SCH_tasks_G[i].RunMe = 0;
-//	SCH_tasks_G[i].oneshot = ONESHOT;
 	int pos;
 	for(pos = 0;pos<SCH_MAX_TASKS;pos++){
 		if(SCH_tasks_G[pos].pTask == 0x0000) break;
@@ -85,12 +73,6 @@ void SCH_Add_Task ( void (*pFunction)() , uint32_t DELAY, uint32_t PERIOD,uint32
 }
 
 void SCH_Delete_Task(uint32_t taskID){
-//	if(SCH_tasks_G[taskID].pTask == 0) return;
-//	SCH_tasks_G[taskID].pTask = 0x0000;
-//	SCH_tasks_G[taskID].Delay = 0;
-//	SCH_tasks_G[taskID].Period =  0;
-//	SCH_tasks_G[taskID].RunMe = 0;
-//	SCH_tasks_G[taskID].oneshot = 0;
 	for(int i = taskID+1;i<SCH_MAX_TASKS;i++){
 		SCH_tasks_G[i-1].pTask = SCH_tasks_G[i].pTask;
 		SCH_tasks_G[i-1].Delay = SCH_tasks_G[i].Delay;
@@ -132,14 +114,3 @@ void SCH_Dispatch_Tasks(void){
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
